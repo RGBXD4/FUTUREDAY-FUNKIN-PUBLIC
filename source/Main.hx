@@ -63,6 +63,8 @@ class Main extends Sprite
 	{
 		super();
 
+		Sys.setCwd(Path.addTrailingSlash(Context.getExternalFilesDir()));
+
 		if (stage != null)
 		{
 			init();
@@ -119,10 +121,9 @@ class Main extends Sprite
 		//FlxG.scaleMode = new FixedScaleAdjustSizeScaleMode();
 
 		SystemInfo.init();
-		#if !mobile
+		
 		Lib.current.stage.align = "tl";
 		Lib.current.stage.scaleMode = StageScaleMode.NO_SCALE;
-		#end
 
 		#if html5
 		FlxG.autoPause = false;
