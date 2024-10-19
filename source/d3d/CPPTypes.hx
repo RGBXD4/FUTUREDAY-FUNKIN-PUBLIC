@@ -12,7 +12,7 @@ import d3d11.interfaces.D3d11DeviceContext;
 import d3d11.interfaces.D3d11RenderTargetView;
 import d3d11.interfaces.D3d11DepthStencilView;
 import dxgi.interfaces.DxgiSwapChain;
-#end
+
 
 // define a bunch of uhhh C++ Types here as typedefs
 typedef LONG = Null<Int>;
@@ -32,4 +32,6 @@ typedef DeviceResources =
 	var renderTarget:D3d11RenderTargetView;
 	var depthStencil:D3d11DepthStencilView;
 };
+#end
+
 #end
