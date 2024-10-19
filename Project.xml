@@ -41,7 +41,7 @@
 	<classpath name="source" />
 	
 	<define name="VIDEOS_ALLOWED" if="web || windows || cpp" unless="32bits || hl"/>
-	<define name="DISCORD_ALLOWED" if="desktop"/> <!--fatboy slim is fucking in heaven-->
+	<define name="DISCORD_ALLOWED" if="cpp"/> <!--fatboy slim is fucking in heaven-->
 	<define name="CRASH_HANDLER" if="cpp" />
 
 	<assets path="assets/preload" rename="assets" exclude="*.ogg" if="web"/>
