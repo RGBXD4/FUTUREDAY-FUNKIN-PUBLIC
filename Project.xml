@@ -27,7 +27,7 @@
 	<window if="desktop" orientation="landscape" fullscreen="false" resizable="true" vsync="false"/>
 
 	<!--Mobile-specific-->
-	<window if="mobile" orientation="landscape" fullscreen="true" width="0" height="0" resizable="false"/>
+	<window if="mobile" orientation="landscape" fullscreen="true" width="1280" height="720" resizable="false"/>
 
 	<!--Switch-specific-->
 	<window if="switch" orientation="landscape" fullscreen="true" width="0" height="0" resizable="true" />
@@ -41,7 +41,7 @@
 	<classpath name="source" />
 	
 	<define name="VIDEOS_ALLOWED" if="web || windows || cpp" unless="32bits || hl"/>
-	<define name="DISCORD_ALLOWED" if="cpp"/> <!--fatboy slim is fucking in heaven-->
+	<define name="DISCORD_ALLOWED" if="desktop"/> <!--fatboy slim is fucking in heaven-->
 	<define name="CRASH_HANDLER" if="cpp" />
 
 	<assets path="assets/preload" rename="assets" exclude="*.ogg" if="web"/>
@@ -99,6 +99,8 @@
 	haxelib git linc_directx https://github.com/Zoardedz/linc_directx
 	forked to fix an error regarding hxcpp_extern_helpers-->
 	<haxelib name="linc_directx" if="windows" unless="hl"/>
+
+	<haxelib name="extension-androidtools" if="android" />
 	
 	<!--WHY DIDNT YOU AVE THIS-->
 	<haxelib name="hxcpp-debug-server" if="desktop"/>
