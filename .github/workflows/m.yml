@@ -60,8 +60,6 @@ jobs:
           haxelib install hxvlc 1.7.1
           haxelib install hxjsonast
           haxelib install hscript
-          haxelib install compiletime
-          haxelib install flixel-screenshot-plugin
           haxelib git flxanimate https://github.com/beihu235/flxanimate
           haxelib git SScript https://github.com/mayo78/SScript
           haxelib git linc_luajit https://github.com/mcagabe19-stuff/linc_luajit-rewriten
