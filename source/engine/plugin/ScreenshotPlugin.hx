@@ -20,11 +20,13 @@ using StringTools;
 // this likes to crash! a lot! it works once flawlessly and then shat itself at the second screenshot. i have no idea why. send help. could be flx sound related????
 
 class ScreenshotPlugin extends flixel.FlxBasic {
+#if desktop
+
     private static var initialized:Bool = false;
     private var container1:Sprite;
     private var flashSprite:Sprite;
     private var flashBitmap:Bitmap;
-    private var screenshotSprite:Sprite;
+    private var screenshotSprite1:Sprite;
     private var shotDisplayBitmap:Bitmap;
     private var outlineBitmap:Bitmap;
     public static var enabled:Bool = true;
@@ -51,14 +53,14 @@ class ScreenshotPlugin extends flixel.FlxBasic {
 
         initialized = true;
         container1 = new Sprite();
-        FlxG.stage.addChild(container);
+        FlxG.stage.addChild(container1);
         flashSprite = new Sprite();
         flashSprite.alpha = 0;
         flashBitmap = new Bitmap(new BitmapData(FlxG.width, FlxG.height, true, 0xFFFFFFFF));
         flashSprite.addChild(flashBitmap);
         screenshotSprite = new Sprite();
         screenshotSprite.alpha = 0;
-        container.addChild(screenshotSprite);
+        container.addChild(screenshotSprite1);
         outlineBitmap = new Bitmap(new BitmapData(Std.int(FlxG.width / 5) + 10, Std.int(FlxG.height / 5) + 10, true, 0xffffffff));
         outlineBitmap.x = 5;
         outlineBitmap.y = 5;
@@ -116,6 +118,8 @@ class ScreenshotPlugin extends flixel.FlxBasic {
                 onScreenshot();
         });
     }
+#end
+
 }
 
 enum abstract FileFormatOption(String) {
