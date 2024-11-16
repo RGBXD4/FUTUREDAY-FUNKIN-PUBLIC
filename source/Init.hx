@@ -34,7 +34,7 @@ class Init extends FlxState
 	{
 		super.create();
 
-		#if cpp
+		#if desktop
 		CPPInterface.darkMode();
 		#end
 
