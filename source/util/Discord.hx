@@ -2,7 +2,7 @@ package util;
 
 import data.ClientPrefs;
 import flixel.FlxG;
-#if DISCORD_ALLOWED
+#if desktop
 import Sys.sleep;
 import sys.thread.Thread;
 import lime.app.Application;
