@@ -176,7 +176,7 @@ class Main extends Sprite
 		
 		dumpAllMemory();
 		
-		#if DISCORD_ALLOWED
+		#if desktop
 		DiscordClient.shutdown();
 		Sys.exit(1);
 		#end
