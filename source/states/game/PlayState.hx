@@ -843,7 +843,7 @@ class PlayState extends MusicBeatState
 
 		precacheList.set('alphabet', 'image');
 
-		#if DISCORD_ALLOWED
+		#if desktop
 		// Updating Discord Rich Presence.
 		DiscordClient.changePresence(detailsText, SONG.song + " (" + storyDifficultyText + ")", iconP2.getCharacter());
 		#end
@@ -1333,7 +1333,7 @@ class PlayState extends MusicBeatState
 
 	function startSong():Void
 	{
-		#if DISCORD_ALLOWED
+		#if desktop
 		// Updating Discord Rich Presence (with Time Left)
 		DiscordClient.changePresence(detailsText, SONG.song + " (" + storyDifficultyText + ")", iconP2.getCharacter(), true, songLength);
 		#end
@@ -1740,7 +1740,7 @@ class PlayState extends MusicBeatState
 
 				paused = false;
 
-				#if DISCORD_ALLOWED
+				#if desktop
 				if (startTimer != null && startTimer.finished)
 				{
 					DiscordClient.changePresence(detailsText, SONG.song
@@ -1764,7 +1764,7 @@ class PlayState extends MusicBeatState
 
 	override public function onFocus():Void
 	{
-		#if DISCORD_ALLOWED
+		#if desktop
 		if (health > 0 && !paused)
 		{
 			if (Conductor.songPosition > 0.0)
@@ -2276,7 +2276,7 @@ class PlayState extends MusicBeatState
 
 			// MusicBeatState.switchState(new GameOverState(boyfriend.getScreenPosition().x, boyfriend.getScreenPosition().y));
 
-			#if DISCORD_ALLOWED
+			#if desktop
 			// Game Over doesn't get his own variable because it's only used here
 			DiscordClient.changePresence("Game Over - " + detailsText, SONG.song + " (" + storyDifficultyText + ")", iconP2.getCharacter());
 			#end
