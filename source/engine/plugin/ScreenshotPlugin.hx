@@ -21,7 +21,7 @@ using StringTools;
 
 class ScreenshotPlugin extends flixel.FlxBasic {
     private static var initialized:Bool = false;
- //   private var container:Sprite;
+    private var container1:Sprite;
     private var flashSprite:Sprite;
     private var flashBitmap:Bitmap;
     private var screenshotSprite:Sprite;
@@ -50,7 +50,7 @@ class ScreenshotPlugin extends flixel.FlxBasic {
         }
 
         initialized = true;
-        container = new Sprite();
+        container1 = new Sprite();
         FlxG.stage.addChild(container);
         flashSprite = new Sprite();
         flashSprite.alpha = 0;
@@ -67,7 +67,7 @@ class ScreenshotPlugin extends flixel.FlxBasic {
         shotDisplayBitmap.scaleX /= 5;
         shotDisplayBitmap.scaleY /= 5;
         screenshotSprite.addChild(shotDisplayBitmap);
-        container.addChild(flashSprite);
+        container1.addChild(flashSprite);
         @:privateAccess openfl.Lib.application.window.onResize.add((w, h) -> {
             flashBitmap.bitmapData = new BitmapData(w, h, true, 0xFFFFFFFF);
             outlineBitmap.bitmapData = new BitmapData(Std.int(w / 5) + 10, Std.int(h / 5) + 10, true, 0xffffffff);
