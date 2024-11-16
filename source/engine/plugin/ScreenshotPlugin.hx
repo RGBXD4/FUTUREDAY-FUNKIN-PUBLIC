@@ -21,7 +21,7 @@ using StringTools;
 
 class ScreenshotPlugin extends flixel.FlxBasic {
     private static var initialized:Bool = false;
-    private var container:Sprite;
+ //   private var container:Sprite;
     private var flashSprite:Sprite;
     private var flashBitmap:Bitmap;
     private var screenshotSprite:Sprite;
