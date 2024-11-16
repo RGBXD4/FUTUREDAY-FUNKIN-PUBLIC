@@ -41,7 +41,6 @@
 	<classpath name="source" />
 	
 	<define name="VIDEOS_ALLOWED" if="web || windows || cpp" unless="32bits || hl"/>
-	<define name="DISCORD_ALLOWED" if="cpp"/> <!--fatboy slim is fucking in heaven-->
 	<define name="CRASH_HANDLER" if="cpp" />
 
 	<assets path="assets/preload" rename="assets" exclude="*.ogg" if="web"/>
@@ -94,7 +93,7 @@
 	<haxelib name="flxanimate" />
 	<haxelib name="hxvlc" if="VIDEOS_ALLOWED"/>
 	<haxelib name="faxe" if='switch'/>
-	<haxelib name="hxdiscord_rpc" if="DISCORD_ALLOWED"/> <!--blacklist system and rpc-->
+	<haxelib name="hxdiscord_rpc" if="desktop"/> <!--blacklist system and rpc-->
 	<!--yeah, directx is really only supported on windows guys it also doesnt work on hl lol!
 	haxelib git linc_directx https://github.com/Zoardedz/linc_directx
 	forked to fix an error regarding hxcpp_extern_helpers-->
