@@ -284,7 +284,7 @@ class Script extends FlxBasic
 	public function error(errorMsg:String, ?winTitle:Null<String>)
 	{
 		trace(errorMsg);
-		#if cpp
+		#if desktop
 		CPPInterface.messageBox(errorMsg, winTitle);
 		#else
 		Lib.application.window.alert(errorMsg, winTitle != null ? winTitle : '${name}: Script Error!');
