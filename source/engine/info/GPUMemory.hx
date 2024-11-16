@@ -5,11 +5,10 @@ package engine.info;
  * 
  * Works only on Windows target.
  */
-#if windows
 import flixel.FlxG;
 import sys.io.Process;
  @:cppInclude('windows.h')
- #end
+ 
  class GPUMemory {
      /**
       * Current dedicated GPU memory usage of this application, updates each second.
