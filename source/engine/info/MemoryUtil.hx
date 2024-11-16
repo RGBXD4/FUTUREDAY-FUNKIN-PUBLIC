@@ -73,7 +73,7 @@ class MemoryUtil
 
 	public static function getTotalMem():Float
 	{
-		#if cpp
+		#if desktop
 		return CPPInterface.getRam();
 		#elseif mac
 		return funkin.backend.utils.native.Mac.getTotalRam();
