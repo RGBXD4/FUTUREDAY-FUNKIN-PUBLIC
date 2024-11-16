@@ -157,7 +157,7 @@ class Main extends Sprite
 	}
 	#end
 
-	#if CRASH_HANDLER
+	#if windows
 	function onCrash(e:UncaughtErrorEvent):Void
 	{
 		var errMsg:String = "";
