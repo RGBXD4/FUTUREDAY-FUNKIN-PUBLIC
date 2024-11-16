@@ -29,7 +29,10 @@ import sys.io.File;
 import sys.io.Process;
 import util.Discord.DiscordClient;
 #end
-
+#if android
+import android.content.Context;
+import android.os.Build;
+#end
 // cumming and jizzing
 #if D3D
 @:buildXml('<include name="../../../../source/d3d/DirectXTK/builder.xml" />')
