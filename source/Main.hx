@@ -27,6 +27,8 @@ import openfl.events.UncaughtErrorEvent;
 import sys.FileSystem;
 import sys.io.File;
 import sys.io.Process;
+#end
+#if desktop
 import util.Discord.DiscordClient;
 #end
 #if android
