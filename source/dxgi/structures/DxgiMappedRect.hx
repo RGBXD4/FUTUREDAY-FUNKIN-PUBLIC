@@ -1,8 +1,8 @@
-#if D3D
+#if windows
 package dxgi.structures;
 
 import haxe.io.Bytes;
-#if cpp
+#if desktop
 import cpp.Star;
 import cpp.Pointer;
 import cpp.vm.Gc;

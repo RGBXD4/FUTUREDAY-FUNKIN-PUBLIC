@@ -1,6 +1,6 @@
 package cpp;
 
-#if cpp
+#if desktop
 #if windows
 @:buildXml('
     <target id="haxe">
@@ -19,7 +19,7 @@ package cpp;
 #end
 class CPPWindows
 {
-	#if cpp
+	#if desktop
 	#if windows
 	@:functionCode('
         int darkMode = mode;

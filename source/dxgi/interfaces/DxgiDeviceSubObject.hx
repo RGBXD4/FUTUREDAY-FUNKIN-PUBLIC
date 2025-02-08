@@ -1,4 +1,4 @@
-#if D3D
+#if windows
 package dxgi.interfaces;
 
 #if windows
@@ -6,7 +6,7 @@ import dxgi.interfaces.DxgiObject;
 import dxgi.interfaces.DxgiObject.NativeIDXGIObject;
 import com.GUID;
 #end
-#if cpp
+#if desktop
 import cpp.Star;
 import d3d.CPPTypes;
 

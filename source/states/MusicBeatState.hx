@@ -23,7 +23,7 @@ import song.Conductor;
 import states.game.PlayState;
 import states.substates.CustomFadeTransition;
 // YEAAAAAHH BABBBYYY
-#if D3D
+#if windows
 import d3d.D3DGame;
 #end
 
@@ -46,13 +46,13 @@ class MusicBeatState extends FlxUIState
 	//probably titlestate honestly
 	public static var lastKnownStateName:String = "TitleState";
 
-	#if D3D
+	#if windows
 	public var d3dHandler:D3DGame;
 
 	public var is3DEnabled(default, set):Bool = false;
 	#end
 
-	#if D3D
+	#if windows
 	public function set_is3DEnabled(n:Bool):Bool
 	{
 		if (n)
@@ -131,7 +131,7 @@ class MusicBeatState extends FlxUIState
 
 	override function update(elapsed:Float)
 	{
-		#if D3D
+		#if windows
 		if (d3dHandler != null && d3dHandler.isActive && is3DEnabled)
 			d3dHandler.Tick(elapsed);
 		#end

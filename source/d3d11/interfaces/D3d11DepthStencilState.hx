@@ -1,4 +1,4 @@
-#if D3D
+#if windows
 package d3d11.interfaces;
 
 import cpp.Star;

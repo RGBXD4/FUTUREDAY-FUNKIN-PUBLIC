@@ -5,7 +5,7 @@ import states.menus.StartState.StartStateIntro;
 import engine.script.FunkinHScript;
 import engine.gc.GarbageCollector;
 import states.menus.StartupState;
-#if cpp
+#if desktop
 import cpp.CPPInterface;
 #end
 import data.ClientPrefs;
@@ -34,7 +34,7 @@ class Init extends FlxState
 	{
 		super.create();
 
-		#if cpp
+		#if desktop
 		CPPInterface.darkMode();
 		#end
 

@@ -2,7 +2,7 @@ package states;
 
 import flixel.FlxG;
 
-#if D3D
+#if windows
 class D3DBase extends MusicBeatState
 {
 	override function create()

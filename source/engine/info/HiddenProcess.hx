@@ -1,6 +1,6 @@
 package engine.info;
 
-#if cpp
+#if desktop
 /*
  * Copyright (C)2005-2019 Haxe Foundation
  *

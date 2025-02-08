@@ -1,7 +1,7 @@
-#if D3D
+#if windows
 package d3d;
 
-#if cpp
+#if desktop
 import cpp.Pointer;
 import cpp.UInt32;
 import cpp.ConstCharStar;

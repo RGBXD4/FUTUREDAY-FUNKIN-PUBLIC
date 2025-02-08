@@ -1,4 +1,4 @@
-#if D3D
+#if windows
 package d3d;
 
 import flixel.FlxG;
@@ -46,7 +46,7 @@ import d3d11.interfaces.D3d11Device;
 import d3d11.enumerations.D3d11CreateDeviceFlags;
 import d3d11.interfaces.D3d11Buffer;
 #end
-#if cpp
+#if desktop
 import cpp.Star;
 import d3d.CPPTypes;
 import cpp.UInt8;

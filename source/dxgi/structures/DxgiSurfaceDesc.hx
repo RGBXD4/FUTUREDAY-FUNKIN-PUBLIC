@@ -1,4 +1,4 @@
-#if D3D
+#if windows
 package dxgi.structures;
 
 #if windows
@@ -6,7 +6,7 @@ import dxgi.enumerations.DxgiFormat;
 import dxgi.enumerations.DxgiFormat.NativeDXGIFormat;
 import dxgi.structures.DxgiSampleDescription;
 #end
-#if cpp
+#if desktop
 import d3d.CPPTypes;
 import cpp.Star;
 import cpp.vm.Gc;

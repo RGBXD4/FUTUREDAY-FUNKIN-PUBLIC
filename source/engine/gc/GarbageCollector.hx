@@ -1,6 +1,6 @@
 package engine.gc;
 
-#if cpp
+#if desktop
 import cpp.vm.Gc;
 #elseif hl
 import hl.Gc;
@@ -28,7 +28,7 @@ class GarbageCollector
 
     public static function run(major:Bool)
     {
-        #if cpp
+        #if desktop
         Gc.run(major);
         if (major) Gc.compact();
         #elseif hl

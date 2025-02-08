@@ -4,14 +4,14 @@ import cpp.ConstCharStar;
 import cpp.Native;
 import cpp.UInt64;
 
-#if cpp
+#if desktop
 #if linux
 @:headerCode("#include <stdio.h>")
 #end
 #end
 class CPPLinux
 {
-	#if cpp
+	#if desktop
 	#if linux
 	@:functionCode('
 		FILE *meminfo = fopen("/proc/meminfo", "r");

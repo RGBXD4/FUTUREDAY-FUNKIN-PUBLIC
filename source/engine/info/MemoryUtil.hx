@@ -1,6 +1,6 @@
 package engine.info;
 
-#if cpp
+#if desktop
 import cpp.CPPInterface;
 import cpp.vm.Gc;
 #elseif hl
@@ -47,7 +47,7 @@ class MemoryUtil
 
 	public static function clearMajor()
 	{
-		#if cpp
+		#if desktop
 		Gc.run(true);
 		Gc.compact();
 		#elseif hl
@@ -73,7 +73,7 @@ class MemoryUtil
 
 	public static function getTotalMem():Float
 	{
-		#if cpp
+		#if desktop
 		return CPPInterface.getRam();
 		#elseif mac
 		return funkin.backend.utils.native.Mac.getTotalRam();
@@ -86,7 +86,7 @@ class MemoryUtil
 
 	public static inline function currentMemUsage()
 	{
-		#if cpp
+		#if desktop
 		return Gc.memInfo64(Gc.MEM_INFO_USAGE);
 		#elseif sys
 		return cast(cast(System.totalMemory, UInt), Float);
@@ -138,7 +138,7 @@ class MemoryUtil
 
 	public static function destroyFlixelZombies()
 	{
-		#if cpp
+		#if desktop
 		// Gc.enterGCFreeZone();
 
 		while ((_zombie = Gc.getNextZombie()) != null)

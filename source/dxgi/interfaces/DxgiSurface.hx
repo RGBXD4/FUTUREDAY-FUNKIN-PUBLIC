@@ -1,4 +1,4 @@
-#if D3D
+#if windows
 package dxgi.interfaces;
 
 #if windows
@@ -10,7 +10,7 @@ import dxgi.interfaces.DxgiDeviceSubObject;
 import dxgi.interfaces.DxgiDeviceSubObject.NativeDxgiDeviceSubObject;
 import d3d.DirectXTK.ThrowIfFailed;
 #end
-#if cpp
+#if desktop
 import d3d.CPPTypes;
 import cpp.Star;
 

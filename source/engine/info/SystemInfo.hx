@@ -127,7 +127,7 @@ class SystemInfo extends FramerateCategory
 				trace('Unable to grab GPU Info');
 		}
 
-		#if cpp
+		#if desktop
 		totalMem = Std.string(MemoryUtil.getTotalMem() / 1024) + " GB";
 		#else
 		trace('Unable to grab RAM Amount');

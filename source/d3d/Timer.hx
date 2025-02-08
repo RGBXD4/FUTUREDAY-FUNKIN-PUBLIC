@@ -1,4 +1,4 @@
-#if D3D
+#if windows
 package d3d;
 
 import haxe.Int64Helper;
@@ -7,7 +7,7 @@ import haxe.Int64;
 import com.LargeInteger;
 import d3d.CPPTypes;
 #end
-#if cpp
+#if desktop
 import cpp.Star;
 
 using cpp.Native;
