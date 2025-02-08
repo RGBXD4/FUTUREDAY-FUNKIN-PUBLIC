@@ -42,7 +42,7 @@ class GarbageCollector
     
     public static function set_enabled(enabled:Bool)
     {
-        #if (cpp || hl)
+        #if (desktop || hl)
         Gc.enable(enabled);
         #end
         return false;

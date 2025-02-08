@@ -40,7 +40,7 @@ class MemoryUtil
 
 	public static function clearMinor()
 	{
-		#if (cpp || java || neko)
+		#if (desktop || java || neko)
 		Gc.run(false);
 		#end
 	}
@@ -59,14 +59,14 @@ class MemoryUtil
 
 	public static function enable()
 	{
-		#if (cpp || hl)
+		#if (deskto || hl)
 		Gc.enable(true);
 		#end
 	}
 
 	public static function disable()
 	{
-		#if (cpp || hl)
+		#if (desktop || hl)
 		Gc.enable(false);
 		#end
 	}
