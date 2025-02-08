@@ -1,7 +1,9 @@
 package states.menus;
 
 // this isnt startup state im rewriting things -Kn1ght
+#if desktop
 import util.Discord.DiscordClient;
+#end
 import objects.WaveformSprite;
 import flixel.group.FlxSpriteGroup;
 import flixel.addons.transition.FlxTransitionableState;
