@@ -5,9 +5,9 @@ package engine.info;
  * 
  * Works only on Windows target.
  */
-#if windows
 import flixel.FlxG;
 import sys.io.Process;
+#if windows
  @:cppInclude('windows.h')
  #end
  class GPUMemory {
@@ -22,9 +22,9 @@ import sys.io.Process;
       * Will be called on update of `usage` variable.
       */
      public static var onUpdate:Void->Void = () -> {};
- #if windows
+ 
      @:noCompletion static var usageTracker:Process;
- #end
+ 
      @:noCompletion static function __close() {
          #if windows
          if (usageTracker == null) return;
