@@ -22,9 +22,9 @@ import sys.io.Process;
       * Will be called on update of `usage` variable.
       */
      public static var onUpdate:Void->Void = () -> {};
- 
+ #if windows
      @:noCompletion static var usageTracker:Process;
- 
+ #end
      @:noCompletion static function __close() {
          #if windows
          if (usageTracker == null) return;
