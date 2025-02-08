@@ -13,7 +13,7 @@ import flixel.text.FlxText;
 class UserBlock extends MusicBeatState {
     override public function create() {
         super.create();
-##if (VIDEOS_ALLOWED && hxvlc)
+#if (VIDEOS_ALLOWED && hxvlc)
         var pomni:PsychVideo = new PsychVideo();
         pomni.load(Paths.video('pomni'), [':input-repeat=65535']);
         pomni.play();
