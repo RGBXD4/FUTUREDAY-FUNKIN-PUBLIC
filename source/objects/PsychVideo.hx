@@ -5,7 +5,7 @@ import flixel.FlxG;
 
 //not using hxCodec anymore it sucks ass and i can FINALLY admit it
 
-class PsychVideo extends FlxVideoSprite {
+class PsychVideo extends hxvlc.flixel.FlxVideoSprite {
     public static var heldVideos:Array<PsychVideo> = [];
 
     public static final looping:String = ':input-repeat=65535';
