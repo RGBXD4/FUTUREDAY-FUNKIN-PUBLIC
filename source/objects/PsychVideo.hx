@@ -1,7 +1,8 @@
 package objects;
-
+#if hxvlc
 import hxvlc.flixel.*;
 import hxvlc.flixel.FlxVideoSprite
+#end
 import flixel.FlxG;
 
 //not using hxCodec anymore it sucks ass and i can FINALLY admit it
