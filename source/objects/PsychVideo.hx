@@ -1,7 +1,7 @@
 package objects;
 #if hxvlc
 import hxvlc.flixel.*;
-import hxvlc.flixel.FlxVideoSprite
+import hxvlc.flixel.FlxVideoSprite;
 #end
 import flixel.FlxG;
 
