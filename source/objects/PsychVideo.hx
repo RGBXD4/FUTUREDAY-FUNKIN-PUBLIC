@@ -1,5 +1,5 @@
 package objects;
-#if hxvlc
+#if (VIDEOS_ALLOWED && hxvlc)
 import hxvlc.flixel.*;
 import hxvlc.flixel.FlxVideoSprite;
 #end
@@ -7,7 +7,8 @@ import flixel.FlxG;
 
 //not using hxCodec anymore it sucks ass and i can FINALLY admit it
 
-class PsychVideo extends FlxVideoSprite {
+class PsychVideo #if (VIDEOS_ALLOWED && hxvlc) extends FlxVideoSprite #end {
+    #if (VIDEOS_ALLOWED && hxvlc)
     public static var heldVideos:Array<PsychVideo> = [];
 
     public static final looping:String = ':input-repeat=65535';
@@ -102,6 +103,7 @@ class PsychVideo extends FlxVideoSprite {
     public static function globalResume() {
         for (i in heldVideos) i.resume();
     }
+    #end
 
 }
 
