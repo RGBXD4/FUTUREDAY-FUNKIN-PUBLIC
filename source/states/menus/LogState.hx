@@ -1,7 +1,9 @@
 package states.menus;
 
 import openfl.filters.ShaderFilter;
+#if (VIDEOS_ALLOWED && hxvlc)
 import objects.PsychVideo;
+#end
 import engine.info.Framerate;
 import data.ClientPrefs;
 import util.CoolUtil;
@@ -152,6 +154,7 @@ class LogState extends MusicBeatState
 						case 'nsfw':
 							addText("?");
 						case 'edge': //hxvlc wont fucking load the video am i retarded
+						#if (VIDEOS_ALLOWED && hxvlc)
 							var blueberries:PsychVideo;
 							
 							blueberries = new PsychVideo();
@@ -159,6 +162,7 @@ class LogState extends MusicBeatState
 							blueberries.scrollFactor.set();
     						add(blueberries);
     						blueberries.antialiasing = ClientPrefs.globalAntialiasing;
+							#end
 						case 'log':
 							if (args[1] == 'harris')
 								args[1] = 'bambi'; // muahaha,,
