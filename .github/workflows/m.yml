@@ -49,7 +49,7 @@ jobs:
           haxelib install flixel 5.5.0
           haxelib install flixel-ui
           haxelib install flixel-addons 3.2.1
-          haxelib install hxvlc 1.7.1
+          haxelib install hxvlc
           haxelib git flxanimate https://github.com/RGBXD4/flxanimate-1.git
           haxelib git hscript https://github.com/FNF-CNE-Devs/hscript-improved
           haxelib git linc_luajit https://github.com/mcagabe19-stuff/linc_luajit-rewriten
