@@ -164,10 +164,10 @@ class MusicBeatState extends FlxUIState
 
 		if(FlxG.keys.justPressed.F5)
         	FlxG.resetState();
-
+#if windows
 		if(FlxG.keys.justPressed.F8)
         	FlxG.switchState(new D3DBase());
-
+#end
 		if (FlxG.save.data != null)
 			FlxG.save.data.fullscreen = FlxG.fullscreen;
 
