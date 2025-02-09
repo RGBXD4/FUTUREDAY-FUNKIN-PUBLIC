@@ -657,6 +657,9 @@ class PlayState extends MusicBeatState
 			strumLine.y = FlxG.height - 150;
 		strumLine.scrollFactor.set();
 
+		blackBars = new FlxSprite(0, 0).loadGraphic(Paths.image('hud/hud bar'));
+		add(blackBars);
+
 		healthBarGroup = new FlxSpriteGroup();
 		healthBarGroup.visible = !cpuControlled;
 		healthBarGroup.antialiasing = true;
@@ -666,9 +669,6 @@ class PlayState extends MusicBeatState
 		healthBar.scrollFactor.set();
 		healthBar.alpha = ClientPrefs.healthBarAlpha;
 		healthBarGroup.add(healthBar);
-		
-		blackBars = new FlxSprite(0, 0).loadGraphic(Paths.image('hud/hud bar'));
-		add(blackBars);
 
 		var showTime:Bool = (ClientPrefs.timeBarType != 'Disabled');
 
