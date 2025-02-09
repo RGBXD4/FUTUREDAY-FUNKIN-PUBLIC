@@ -184,7 +184,7 @@ class StartMenu extends MusicBeatState {
         super.update(elapsed);
 
         #if android
-        var justTouched:Bool = false
+        var justTouched:Bool = false;
         for (touch in FlxG.touches.list)
         {
         if (touch.justPressed)

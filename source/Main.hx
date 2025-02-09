@@ -73,6 +73,10 @@ class Main extends Sprite
 		Sys.setCwd(Path.addTrailingSlash(Context.getExternalFilesDir()));
 		#end
 
+		#if android
+		FlxG.android.preventDefaultKeys = [BACK];
+		#end
+
 		if (stage != null)
 		{
 			init();
