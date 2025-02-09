@@ -668,6 +668,7 @@ class PlayState extends MusicBeatState
 		healthBarGroup.add(healthBar);
 		
 		blackBars = new FlxSprite(0, 0).loadGraphic(Paths.image('hud/hud bar'));
+		blackBars.scale.set(2, 2);
 		add(blackBars);
 
 		var showTime:Bool = (ClientPrefs.timeBarType != 'Disabled');

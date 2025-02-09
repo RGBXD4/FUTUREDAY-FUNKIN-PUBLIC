@@ -27,6 +27,7 @@ import states.substates.CustomFadeTransition;
 import d3d.D3DGame;
 #end
 #if mobile
+import flixel.input.actions.FlxActionInput;
 import mobile.FlxButton;
 import mobile.FlxHitbox;
 #end
