@@ -843,6 +843,11 @@ class PlayState extends MusicBeatState
 
 		precacheList.set('alphabet', 'image');
 
+#if android
+addMobileControls();
+mobileControls.visible = true;
+#end
+
 		#if DISCORD_ALLOWED
 		// Updating Discord Rich Presence.
 		DiscordClient.changePresence(detailsText, SONG.song + " (" + storyDifficultyText + ")", iconP2.getCharacter());
@@ -853,11 +858,6 @@ class PlayState extends MusicBeatState
 			FlxG.stage.addEventListener(KeyboardEvent.KEY_DOWN, onKeyPress);
 			FlxG.stage.addEventListener(KeyboardEvent.KEY_UP, onKeyRelease);
 		}
-
-		#if android
-		addMobileControls();
-		mobileControls.visible = true;
-		#end
 
 		super.create();
 
