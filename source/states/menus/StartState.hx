@@ -120,13 +120,8 @@ class StartMenu extends MusicBeatState {
 		'',
 		'',
         '',
-        #if !mobile
         '    PRESS [ENTER] TO OPERATE VISUAL BASE MENU. (TITLESTATE.CPP)',
         '    PRESS [F1] TO OPERATE VISUAL OPTIONS MENU. (OPTIONSSTATE.CPP)'
-        #else
-        '    PRESS [BACK] TO OPERATE VISUAL BASE MENU. (TITLESTATE.CPP)',
-        '    PRESS [TAP] TO OPERATE VISUAL OPTIONS MENU. (OPTIONSSTATE.CPP)'
-        #end
 	];
 
     var texts:FlxSpriteGroup;
@@ -183,20 +178,9 @@ class StartMenu extends MusicBeatState {
     override public function update(elapsed:Float) {
         super.update(elapsed);
 
-        #if android
-        var justTouched:Bool = false;
-        for (touch in FlxG.touches.list)
-        {
-        if (touch.justPressed)
-        {
-        justTouched = true;
-        }
-        }
-        #end
-
-        if (FlxG.keys.justPressed.F1 #if android || FlxG.android.justReleased.BACK #end)
+        if (FlxG.keys.justPressed.F1)
             MusicBeatState.switchState(new states.options.OptionsState());
-        if (FlxG.keys.justPressed.ENTER #if android || justTouched #end)
+        if (FlxG.keys.justPressed.ENTER)
             MusicBeatState.switchState(new TitleState()); 
     }
 }
