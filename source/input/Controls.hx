@@ -11,6 +11,10 @@ import flixel.input.actions.FlxActionSet;
 import flixel.input.gamepad.FlxGamepadButton;
 import flixel.input.gamepad.FlxGamepadInputID;
 import flixel.input.keyboard.FlxKey;
+#if mobile
+import mobile.FlxButton;
+import mobile.FlxHitbox;
+#end
 
 #if (haxe >= "4.0.0")
 enum abstract Action(String) to String from String
@@ -379,6 +383,25 @@ class Controls extends FlxActionSet
 		setKeyboardScheme(scheme, false);
 	}
 	#end
+
+#if mobile
+		public var trackedInputsNOTES:Array<FlxActionInput> = [];
+
+		public function addButtonNOTES(action:FlxActionDigital, button:FlxButton, state:FlxInputState)
+		{
+			var input:FlxActionInputDigitalIFlxInput = new FlxActionInputDigitalIFlxInput(button, state);
+			trackedInputsNOTES.push(input);
+			action.add(input);
+		}
+
+		public function setHitBox(Hitbox:FlxHitbox)
+		{
+			inline forEachBound(Control.NOTE_UP, (action, state) -> addButtonNOTES(action, Hitbox.buttonUp, state));
+			inline forEachBound(Control.NOTE_DOWN, (action, state) -> addButtonNOTES(action, Hitbox.buttonDown, state));
+			inline forEachBound(Control.NOTE_LEFT, (action, state) -> addButtonNOTES(action, Hitbox.buttonLeft, state));
+			inline forEachBound(Control.NOTE_RIGHT, (action, state) -> addButtonNOTES(action, Hitbox.buttonRight, state));
+		}
+#end
 
 	override function update()
 	{
