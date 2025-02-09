@@ -52,7 +52,7 @@ class MusicBeatState extends FlxUIState
 			if (mobileControls != null)
 			removeMobileControls();
 
-			mobileControls = new MobileControls();
+			mobileControls = new mobile.MobileControls();
 
 			controls.setHitBox(mobileControls.hitbox);
 
@@ -69,9 +69,6 @@ class MusicBeatState extends FlxUIState
 		}
 		public function removeMobileControls()
 		{
-			if (trackedInputsMobileControls.length > 0)
-			controls.removeVirtualControlsInput(trackedInputsMobileControls);
-
 			if (mobileControls != null)
 			remove(mobileControls);
 		}
