@@ -26,6 +26,10 @@ import states.substates.CustomFadeTransition;
 #if windows
 import d3d.D3DGame;
 #end
+#if mobile
+import mobile.FlxButton;
+import mobile.FlxHitbox;
+#end
 
 class MusicBeatState extends FlxUIState
 {
@@ -38,6 +42,40 @@ class MusicBeatState extends FlxUIState
 	private var curDecStep:Float = 0;
 	private var curDecBeat:Float = 0;
 	private var controls(get, never):Controls;
+	#if mobile
+		var mobileControls:MobileControls;
+		var trackedInputsMobileControls:Array<FlxActionInput> = [];
+
+		public function addMobileControls()
+		{
+			if (mobileControls != null)
+			removeMobileControls();
+
+			mobileControls = new MobileControls();
+
+			controls.setHitBox(mobileControls.hitbox);
+
+			trackedInputsMobileControls = controls.trackedInputsNOTES;
+			controls.trackedInputsNOTES = [];
+
+			var camControls:FlxCamera = new FlxCamera();
+			FlxG.cameras.add(camControls, false);
+			camControls.bgColor.alpha = 0;
+
+			mobileControls.cameras = [camControls];
+			mobileControls.visible = false;
+			add(mobileControls);
+		}
+		public function removeMobileControls()
+		{
+			if (trackedInputsMobileControls.length > 0)
+			controls.removeVirtualControlsInput(trackedInputsMobileControls);
+
+			if (mobileControls != null)
+			remove(mobileControls);
+		}
+		#end
+
 
 	private var elapsedTime:Float = 0;
 
