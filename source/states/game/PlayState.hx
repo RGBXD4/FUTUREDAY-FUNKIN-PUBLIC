@@ -334,6 +334,7 @@ class PlayState extends MusicBeatState
 	override public function create()
 	{
 		Paths.clearStoredMemory();
+		Paths.clearUnusedMemory();
 
 		// wow it keeps the stuff from the last song in memory if you do story mode wow! its so good
 		FlxG.bitmap.clearUnused();
@@ -1910,7 +1911,22 @@ mobileControls.visible = true;
 		if (controls.PAUSE #if android || FlxG.android.justReleased.BACK #end && startedCountdown && canPause)
 		{
 			if (!ScriptUtil.hasPause(scripts.executeAllFunc("pause"))) {
-				openPauseMenu();
+		persistentUpdate = false;
+		persistentDraw = true;
+		paused = true;
+
+		if (FlxG.sound.music != null)
+		{
+			FlxG.sound.music.pause();
+			vocals.pause();
+			opponentVocals.pause();
+		}
+		openSubState(new PauseSubState(boyfriend.getScreenPosition().x, boyfriend.getScreenPosition().y));
+		// }
+
+		#if DISCORD_ALLOWED
+		DiscordClient.changePresence(detailsPausedText, SONG.song + " (" + storyDifficultyText + ")", iconP2.getCharacter());
+		#end
 			}
 		}
 
@@ -2217,26 +2233,6 @@ mobileControls.visible = true;
 
 		if (scripts != null)
 			scripts.executeAllFunc("updatePost", [elapsed]);
-	}
-
-	function openPauseMenu()
-	{
-		persistentUpdate = false;
-		persistentDraw = true;
-		paused = true;
-
-		if (FlxG.sound.music != null)
-		{
-			FlxG.sound.music.pause();
-			vocals.pause();
-			opponentVocals.pause();
-		}
-		openSubState(new PauseSubState(boyfriend.getScreenPosition().x, boyfriend.getScreenPosition().y));
-		// }
-
-		#if DISCORD_ALLOWED
-		DiscordClient.changePresence(detailsPausedText, SONG.song + " (" + storyDifficultyText + ")", iconP2.getCharacter());
-		#end
 	}
 
 	function openChartEditor()
