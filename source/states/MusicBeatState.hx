@@ -43,7 +43,7 @@ class MusicBeatState extends FlxUIState
 	private var curDecBeat:Float = 0;
 	private var controls(get, never):Controls;
 	#if mobile
-		var mobileControls:MobileControls;
+		var mobileControls:mobile.MobileControls;
 		var trackedInputsMobileControls:Array<FlxActionInput> = [];
 
 		public function addMobileControls()
