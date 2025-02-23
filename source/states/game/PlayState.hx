@@ -389,7 +389,8 @@ class PlayState extends MusicBeatState
 		}
 
 		if (FlxG.sound.music != null)
-			FlxG.sound.music.stop();
+		{FlxG.sound.music.stop();
+		FlxG.sound.music.destroy();}
 
 		camGame = new FunkCamera();
 		camHUD = new FunkCamera();
@@ -663,13 +664,13 @@ class PlayState extends MusicBeatState
 		healthBarGroup.antialiasing = true;
 		add(healthBarGroup);
 
-		blackBars = new FlxSprite(0, 0).loadGraphic(Paths.image('hud/hud bar'));
-		add(blackBars);
-
 		healthBar = new HealthBar(800, (ClientPrefs.downScroll ? 80 : FlxG.height * 0.81) , Paths.image("hud/backbar"), Paths.image("hud/frontbar"), this, 'displayedHealth', 0, 2);
 		healthBar.scrollFactor.set();
 		healthBar.alpha = ClientPrefs.healthBarAlpha;
 		healthBarGroup.add(healthBar);
+
+		blackBars = new FlxSprite(0, 0).loadGraphic(Paths.image('hud/hud bar'));
+		healthBarGroup.add(blackBars);
 
 		var showTime:Bool = (ClientPrefs.timeBarType != 'Disabled');
 
